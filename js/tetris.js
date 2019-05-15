@@ -223,7 +223,9 @@ class Tetris {
         for (let i = 0; i < this.blocks[type].shape[angle].length; i++) {
             let cellX = x + this.blocks[type].shape[angle][i][0];
             let cellY = y + this.blocks[type].shape[angle][i][1];
-            this.virtualStage[cellX][cellY] = type;
+            if (cellY >= 0) {
+                this.virtualStage[cellX][cellY] = type;
+            }
         }
         for (let y = this.stageHeight - 1; y >= 0; ) {
             let filled = true;
@@ -239,7 +241,10 @@ class Tetris {
                         this.virtualStage[x][y2] = this.virtualStage[x][y2 - 1];
                     }
                 }
-                let linesElem = document.getElementById("lines");
+                for (let x = 0; x < this.stageWidth; x++) {
+                    this.virtualStage[x][0] = null;
+                }
+            let linesElem = document.getElementById("lines");
                 this.deletedLines++;
                 linesElem.innerText = "" + this.deletedLines;
             } else {
