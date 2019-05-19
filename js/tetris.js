@@ -121,9 +121,9 @@ class Tetris {
 
     drawCell(context, cellX, cellY, cellSize, type) {
         let block = this.blocks[type];
-	let adjustedX = cellX + 0.5;
-	let adjustedY = cellY + 0.5;
-	let adjustedSize = cellSize - 1;
+        let adjustedX = cellX + 0.5;
+        let adjustedY = cellY + 0.5;
+        let adjustedSize = cellSize - 1;
         context.fillStyle = block.color;
         context.fillRect(adjustedX, adjustedY, adjustedSize, adjustedSize);
         context.strokeStyle = block.highlight;
