@@ -244,7 +244,7 @@ class Tetris {
                 for (let x = 0; x < this.stageWidth; x++) {
                     this.virtualStage[x][0] = null;
                 }
-            let linesElem = document.getElementById("lines");
+                let linesElem = document.getElementById("lines");
                 this.deletedLines++;
                 linesElem.innerText = "" + this.deletedLines;
             } else {
